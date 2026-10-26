@@ -1,0 +1,17 @@
+# React
+node_modules/
+dist/
+
+# Java / Maven
+target/
+*.class
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE and logs
+.idea/
+*.iml
+*.log
