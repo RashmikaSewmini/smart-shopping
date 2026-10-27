@@ -10,6 +10,7 @@ import {
     useLocation,
 } from "react-router-dom";
 
+import AIChatPage from "./pages/AIChatPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
@@ -84,6 +85,8 @@ function AppNavigation() {
                     Purchase History
                 </NavLink>
 
+                <NavLink to="/ai-chat">AI Assistant</NavLink>
+
                 <button
                     className="app-navigation-logout"
                     onClick={handleLogout}
@@ -123,6 +126,14 @@ export default function App() {
                         <Route
                             path="/purchase-history"
                             element={<PurchaseHistoryPage />}
+                        />
+                        <Route
+                            path="/ai-chat"
+                            element={
+                                <ProtectedRoute>
+                                    <AIChatPage />
+                                </ProtectedRoute>
+                            }
                         />
                     </Route>
                 </Route>
